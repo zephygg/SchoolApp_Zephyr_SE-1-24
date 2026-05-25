@@ -1,13 +1,15 @@
-﻿namespace SchoolApp;
+﻿using SchoolApp.ViewModels;
+
+namespace SchoolApp;
 
 public partial class MainPage : ContentPage
 {
-    private int _count = 0;
-
     public MainPage()
     {
         InitializeComponent();
+        BindingContext = new Person();
     }
+    private int _count = 0;
 
     private void OnTapClicked(object sender, EventArgs e)
     {
@@ -19,3 +21,4 @@ public partial class MainPage : ContentPage
         await Shell.Current.GoToAsync(nameof(StudentsPage));
     }
 }
+
